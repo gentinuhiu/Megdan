@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Megdan")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d09230c48acaeb32396007c2238a7e05d675af9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Megdan")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Megdan")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

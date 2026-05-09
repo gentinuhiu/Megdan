@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GENTI\\source\\repos\\Megdan\\Megdan\\Megdan.csproj": {}
+    "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Megdan.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GENTI\\source\\repos\\Megdan\\Megdan\\Megdan.csproj": {
+    "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Megdan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GENTI\\source\\repos\\Megdan\\Megdan\\Megdan.csproj",
+        "projectUniqueName": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Megdan.csproj",
         "projectName": "Megdan",
-        "projectPath": "C:\\Users\\GENTI\\source\\repos\\Megdan\\Megdan\\Megdan.csproj",
-        "packagesPath": "C:\\Users\\GENTI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GENTI\\source\\repos\\Megdan\\Megdan\\obj\\",
+        "projectPath": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Megdan.csproj",
+        "packagesPath": "C:\\Users\\Gigabyte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\GENTI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gigabyte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
@@ -90,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

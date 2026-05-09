@@ -1,4 +1,4 @@
-using Megdan.Models;
+using Megdan.Domain;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

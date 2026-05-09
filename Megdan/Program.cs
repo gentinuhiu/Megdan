@@ -1,4 +1,7 @@
-using Megdan.Data;
+using Megdan.Domain.Data;
+using Megdan.Repository;
+using Megdan.Service.Implementation;
+using Megdan.Service.Interface;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +16,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddTransient<IComplaintService, ComplaintService>();
 
 var app = builder.Build();
 

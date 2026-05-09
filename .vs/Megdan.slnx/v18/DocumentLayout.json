@@ -1,0 +1,343 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Data\\Migrations\\20260509183145_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Megdan\\Repository\\Data\\Migrations\\20260509183145_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\service\\implementation\\complaintservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\service\\implementation\\complaintservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\repository\\data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\repository\\data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\repository\\data\\migrations\\00000000000000_createidentityschema.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\repository\\data\\migrations\\00000000000000_createidentityschema.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\controllers\\complaintscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\controllers\\complaintscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\repository\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\repository\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\domain\\entity\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\domain\\entity\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\domain\\entity\\complaint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\domain\\entity\\complaint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\domain\\entity\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\domain\\entity\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\service\\interface\\icomplaintservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\service\\interface\\icomplaintservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\domain\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\domain\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\domain\\enum\\prioritylevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\domain\\enum\\prioritylevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|c:\\users\\gigabyte\\documents\\github\\megdan\\megdan\\domain\\enum\\complaintstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7010CA5F-FE8F-B9E0-1B0E-C5C130EFE7E7}|Megdan\\Megdan.csproj|solutionrelative:megdan\\domain\\enum\\complaintstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260509183145_init.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Data\\Migrations\\20260509183145_init.cs",
+              "RelativeDocumentMoniker": "Megdan\\Repository\\Data\\Migrations\\20260509183145_init.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Data\\Migrations\\20260509183145_init.cs",
+              "RelativeToolTip": "Megdan\\Repository\\Data\\Migrations\\20260509183145_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:31:45.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Megdan\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Megdan\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-09T18:30:14.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Megdan\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Megdan\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-09T18:30:13.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ComplaintService.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Service\\Implementation\\ComplaintService.cs",
+              "RelativeDocumentMoniker": "Megdan\\Service\\Implementation\\ComplaintService.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Service\\Implementation\\ComplaintService.cs",
+              "RelativeToolTip": "Megdan\\Service\\Implementation\\ComplaintService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwB4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:20:21.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Megdan\\Repository\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Megdan\\Repository\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:29:59.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Repository.cs",
+              "RelativeDocumentMoniker": "Megdan\\Repository\\Repository.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Repository.cs",
+              "RelativeToolTip": "Megdan\\Repository\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:21:31.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "00000000000000_CreateIdentitySchema.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Data\\Migrations\\00000000000000_CreateIdentitySchema.Designer.cs",
+              "RelativeDocumentMoniker": "Megdan\\Repository\\Data\\Migrations\\00000000000000_CreateIdentitySchema.Designer.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Data\\Migrations\\00000000000000_CreateIdentitySchema.Designer.cs",
+              "RelativeToolTip": "Megdan\\Repository\\Data\\Migrations\\00000000000000_CreateIdentitySchema.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:29:48.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Megdan\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Megdan\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:29:33.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ComplaintsController.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Controllers\\ComplaintsController.cs",
+              "RelativeDocumentMoniker": "Megdan\\Controllers\\ComplaintsController.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Controllers\\ComplaintsController.cs",
+              "RelativeToolTip": "Megdan\\Controllers\\ComplaintsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:26:50.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Program.cs",
+              "RelativeDocumentMoniker": "Megdan\\Program.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Program.cs",
+              "RelativeToolTip": "Megdan\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:22:47.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Megdan\\Repository\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Megdan\\Repository\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:23:25.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\Entity\\Comment.cs",
+              "RelativeDocumentMoniker": "Megdan\\Domain\\Entity\\Comment.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\Entity\\Comment.cs",
+              "RelativeToolTip": "Megdan\\Domain\\Entity\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:18:30.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Complaint.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\Entity\\Complaint.cs",
+              "RelativeDocumentMoniker": "Megdan\\Domain\\Entity\\Complaint.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\Entity\\Complaint.cs",
+              "RelativeToolTip": "Megdan\\Domain\\Entity\\Complaint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:18:18.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\Entity\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Megdan\\Domain\\Entity\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\Entity\\BaseEntity.cs",
+              "RelativeToolTip": "Megdan\\Domain\\Entity\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:16:43.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IComplaintService.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Service\\Interface\\IComplaintService.cs",
+              "RelativeDocumentMoniker": "Megdan\\Service\\Interface\\IComplaintService.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Service\\Interface\\IComplaintService.cs",
+              "RelativeToolTip": "Megdan\\Service\\Interface\\IComplaintService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:19:53.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\IRepository.cs",
+              "RelativeDocumentMoniker": "Megdan\\Repository\\IRepository.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Repository\\IRepository.cs",
+              "RelativeToolTip": "Megdan\\Repository\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:21:22.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Megdan\\Domain\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\ErrorViewModel.cs",
+              "RelativeToolTip": "Megdan\\Domain\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:18:48.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PriorityLevel.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\Enum\\PriorityLevel.cs",
+              "RelativeDocumentMoniker": "Megdan\\Domain\\Enum\\PriorityLevel.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\Enum\\PriorityLevel.cs",
+              "RelativeToolTip": "Megdan\\Domain\\Enum\\PriorityLevel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:18:04.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ComplaintStatus.cs",
+              "DocumentMoniker": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\Enum\\ComplaintStatus.cs",
+              "RelativeDocumentMoniker": "Megdan\\Domain\\Enum\\ComplaintStatus.cs",
+              "ToolTip": "C:\\Users\\Gigabyte\\Documents\\GitHub\\Megdan\\Megdan\\Domain\\Enum\\ComplaintStatus.cs",
+              "RelativeToolTip": "Megdan\\Domain\\Enum\\ComplaintStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T18:17:37.132Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
