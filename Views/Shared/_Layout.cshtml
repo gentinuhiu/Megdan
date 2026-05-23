@@ -1,0 +1,152 @@
+﻿@{
+    var title = ViewData["Title"] as string ?? "MEGDAN";
+}
+
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-stone-50 text-stone-900">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@title - MEGDAN</title>
+
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @@theme {
+        --font-sans: "Satoshi", "Inter", sans-serif;
+        --color-brand-50: #eef7f6;
+        --color-brand-100: #d9ece9;
+        --color-brand-200: #b7dbd6;
+        --color-brand-300: #89c2bc;
+        --color-brand-400: #56a49d;
+        --color-brand-500: #2a847d;
+        --color-brand-600: #01696f;
+        --color-brand-700: #0c4e54;
+        --color-brand-800: #123c40;
+        --color-brand-900: #152f32;
+        }
+    </style>
+</head>
+<body class="min-h-full bg-stone-50 font-sans text-[15px] text-stone-800 antialiased selection:bg-brand-100 selection:text-brand-900">
+    <a href="#main-content"
+       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-stone-900 focus:shadow">
+        Skip to content
+    </a>
+
+    <div class="flex min-h-screen flex-col">
+        <header class="border-b border-stone-200/80 bg-white/90 backdrop-blur">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+                <a asp-controller="Home" asp-action="Index" class="flex items-center gap-3 text-stone-900">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 text-white shadow-sm">
+                        <span class="text-white font-bold text-lg" data-fg-d5jy6="8.9:8.3254:/src/app/components/Header.tsx:17:15:704:55:e:span:t" data-fgid-d5jy6=":r9:">M</span>
+                    </span>
+                    <span class="flex flex-col">
+                        <span class="text-base font-bold tracking-tight">MEGDAN</span>
+                    </span>
+                </a>
+
+                <nav class="hidden items-center gap-2 md:flex">
+                    <a asp-controller="Home" asp-action="Index"
+                       class="rounded-full px-4 py-2 text-sm font-medium text-stone-600 transition hover:bg-stone-100 hover:text-stone-900">
+                        Home
+                    </a>
+                    <a asp-controller="Map" asp-action="Index"
+                       class="rounded-full px-4 py-2 text-sm font-medium text-stone-600 transition hover:bg-stone-100 hover:text-stone-900">
+                        Map View
+                    </a>
+                    <a asp-controller="Complaints" asp-action="Track"
+                       class="rounded-full px-4 py-2 text-sm font-medium text-stone-600 transition hover:bg-stone-100 hover:text-stone-900">
+                        Track Complaint
+                    </a>
+                    <a asp-controller="Admin" asp-action="Index"
+                       class="rounded-full px-4 py-2 text-sm font-medium text-stone-600 transition hover:bg-stone-100 hover:text-stone-900">
+                        Admin Access
+                    </a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <a asp-controller="Complaints" asp-action="Create"
+                       class="hidden rounded-full bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 sm:inline-flex">
+                        Submit Complaint
+                    </a>
+
+                    <button type="button"
+                            id="mobile-menu-button"
+                            class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-stone-200 bg-white text-stone-700 md:hidden"
+                            aria-expanded="false"
+                            aria-controls="mobile-menu"
+                            aria-label="Toggle navigation">
+                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 7h16M4 12h16M4 17h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden border-t border-stone-200 bg-white md:hidden">
+                <div class="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6">
+                    <a asp-controller="Home" asp-action="Index" class="rounded-lg px-3 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100">Home</a>
+                    <a asp-controller="Complaints" asp-action="Create" class="rounded-lg px-3 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100">Submit Complaint</a>
+                    <a asp-controller="Map" asp-action="Index" class="rounded-lg px-3 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100">Map View</a>
+                    <a asp-controller="Complaints" asp-action="Track" class="rounded-lg px-3 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100">Track Complaint</a>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content" class="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 lg:px-8">
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="mb-6 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="mb-6 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+
+            @if (TempData["AiWarning"] != null)
+            {
+                <div class="mb-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+                    @TempData["AiWarning"]
+                </div>
+            }
+
+            @RenderBody()
+        </main>
+
+        <footer class="border-t border-stone-200 bg-white">
+            <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-stone-500 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+                <p>&copy; @DateTime.UtcNow.Year Megdan. AI-Powered Citizen Complaint System.</p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a asp-controller="Home" asp-action="Privacy" class="hover:text-stone-900">Privacy Policy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        (() => {
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        if (!button || !menu) return;
+
+        button.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        button.setAttribute('aria-expanded', (!isOpen).toString());
+        });
+        })();
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

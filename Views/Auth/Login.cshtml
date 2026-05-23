@@ -1,0 +1,116 @@
+﻿@model Megdan.Web.ViewModels.AdminLoginViewModel
+
+@{
+    ViewData["Title"] = "Admin Login";
+}
+
+<div class="grid min-h-[calc(100vh-12rem)] items-center gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+    <section class="hidden rounded-[2rem] border border-stone-200 bg-stone-900 p-8 text-white shadow-sm lg:block xl:p-10">
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-400">Administrative access</p>
+        <h1 class="mt-3 max-w-md text-4xl font-black tracking-tight text-white">
+            Sign in to manage complaints, workflows, and urgent cases.
+        </h1>
+        <p class="mt-5 max-w-xl text-sm leading-7 text-stone-300 sm:text-base">
+            This area is reserved for authorized municipal staff. Use your administrator credentials to review submissions, update statuses, monitor urgent reports, and manage complaint records.
+        </p>
+
+        <div class="mt-8 grid gap-4">
+            <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-400">Inside the admin area</p>
+                <ul class="mt-4 space-y-3 text-sm leading-6 text-stone-200">
+                    <li><span class="font-semibold text-white">1.</span> Review newly submitted complaints and AI-assisted categorization.</li>
+                    <li><span class="font-semibold text-white">2.</span> Update complaint status, comments, and resolution details.</li>
+                    <li><span class="font-semibold text-white">3.</span> Respond quickly to urgent complaints and reporting trends.</li>
+                </ul>
+            </div>
+
+            <div class="rounded-[1.5rem] border border-brand-400/20 bg-brand-500/10 p-5">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-200">Security note</p>
+                <p class="mt-3 text-sm leading-6 text-stone-200">
+                    This login should be used only by approved staff accounts. Keep credentials private and avoid signing in from untrusted devices.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mx-auto w-full max-w-xl rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+        <div class="mb-8">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Megdan admin</p>
+            <h2 class="mt-3 text-3xl font-black tracking-tight text-stone-900 sm:text-4xl">
+                Admin login
+            </h2>
+            <p class="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
+                Enter your administrator email and password to access the management dashboard.
+            </p>
+        </div>
+
+        <form asp-action="Login"
+              asp-controller="Auth"
+              method="post"
+              class="space-y-6"
+              novalidate>
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly"
+                 class="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700"></div>
+
+            @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+            {
+                <div class="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700" role="alert" aria-live="polite">
+                    <div class="flex items-start gap-3">
+                        <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 9v4" />
+                            <path d="M12 17h.01" />
+                            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+                        </svg>
+                        <div>
+                            <p class="font-semibold text-rose-800">Login failed</p>
+                            <p class="mt-1">@Model.ErrorMessage</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="grid gap-5">
+                <div>
+                    <label asp-for="Email" class="mb-2 block text-sm font-semibold text-stone-800"></label>
+                    <input asp-for="Email"
+                           autocomplete="username"
+                           class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+                    <span asp-validation-for="Email" class="mt-2 block text-sm text-rose-600"></span>
+                </div>
+
+                <div>
+                    <div class="mb-2 flex items-center justify-between gap-3">
+                        <label asp-for="Password" class="block text-sm font-semibold text-stone-800"></label>
+                    </div>
+                    <input asp-for="Password"
+                           autocomplete="current-password"
+                           class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+                    <span asp-validation-for="Password" class="mt-2 block text-sm text-rose-600"></span>
+                </div>
+            </div>
+
+            <div class="rounded-[1.5rem] border border-stone-200 bg-stone-50 p-4">
+                <p class="text-sm leading-6 text-stone-600">
+                    Use only your assigned administrator account. This area is intended for complaint review, updates, and municipal response workflows.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-3 border-t border-stone-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <p class="text-sm text-stone-500">
+                    Access is restricted to authorized staff.
+                </p>
+
+                <button type="submit"
+                        class="inline-flex items-center justify-center rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700">
+                    Log in
+                </button>
+            </div>
+        </form>
+    </section>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

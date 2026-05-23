@@ -1,0 +1,472 @@
+﻿@model Megdan.Web.ViewModels.SubmitComplaintViewModel
+
+@{
+    ViewData["Title"] = "Submit Complaint";
+}
+
+<style>
+    .leaflet-pane,
+    .leaflet-top,
+    .leaflet-bottom {
+        z-index: 100 !important;
+    }
+
+    #submitOverlay {
+        z-index: 9999 !important;
+    }
+</style>
+
+<div id="submitOverlay"
+     class="pointer-events-none fixed inset-0 z-[999] hidden items-center justify-center bg-stone-950/35 px-4 backdrop-blur-sm"
+     aria-hidden="true">
+    <div class="w-full max-w-md rounded-[2rem] border border-stone-200 bg-white p-6 shadow-2xl sm:p-8">
+        <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
+            <svg class="h-7 w-7 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" class="stroke-stone-200" stroke-width="3"></circle>
+                <path d="M21 12a9 9 0 0 0-9-9" class="stroke-brand-600" stroke-width="3" stroke-linecap="round"></path>
+            </svg>
+        </div>
+
+        <div class="mt-5 text-center">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Please wait</p>
+            <h2 class="mt-2 text-2xl font-bold tracking-tight text-stone-900">Submitting your complaint</h2>
+            <p id="submitOverlayMessage" class="mt-3 text-sm leading-7 text-stone-600">
+                We are validating your submission, processing the AI analysis, and preparing your secure tracking details.
+            </p>
+        </div>
+
+        <div class="mt-6 overflow-hidden rounded-full bg-stone-200">
+            <div class="h-2 w-full animate-pulse rounded-full bg-brand-600"></div>
+        </div>
+
+        <div class="mt-5 rounded-[1.5rem] border border-brand-200 bg-brand-50 p-4">
+            <p class="text-sm leading-6 text-stone-700">
+                This may take a few seconds. Please do not close the page or click the submit button again.
+            </p>
+        </div>
+
+        <p class="sr-only" role="status" aria-live="polite">
+            Complaint submission is in progress.
+        </p>
+    </div>
+</div>
+
+<div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+    <section class="rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Public submission</p>
+        <h1 class="mt-3 text-3xl font-black tracking-tight text-stone-900 sm:text-4xl">
+            Submit a complaint
+        </h1>
+        <p class="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
+            Describe the issue clearly, add the address if available, and place a pin on the map so the municipality can understand where the problem was reported.
+        </p>
+
+        <div class="mt-8 space-y-6">
+            <div class="rounded-[1.5rem] border border-stone-200 bg-stone-50 p-5">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">What happens next</p>
+                <ol class="mt-4 space-y-3 text-sm leading-6 text-stone-600">
+                    <li><span class="font-semibold text-stone-900">1.</span> Your complaint is submitted with optional photos and map location.</li>
+                    <li><span class="font-semibold text-stone-900">2.</span> The system helps categorize and prioritize the case for review.</li>
+                    <li><span class="font-semibold text-stone-900">3.</span> A secure tracking link lets you follow updates without creating an account.</li>
+                </ol>
+            </div>
+
+            <div class="rounded-[1.5rem] border border-brand-200 bg-brand-50 p-5">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">Helpful note</p>
+                <p class="mt-3 text-sm leading-6 text-stone-700">
+                    Photo submission is optional, but it can help administrators understand the issue faster. The map pin is used to record the complaint location.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+        <form asp-action="Create"
+              asp-controller="Complaints"
+              method="post"
+              enctype="multipart/form-data"
+              class="space-y-8"
+              id="complaintForm"
+              aria-busy="false">
+            @Html.AntiForgeryToken()
+
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Complaint form</p>
+                <h2 class="mt-2 text-2xl font-bold tracking-tight text-stone-900">Issue details</h2>
+            </div>
+
+            <div asp-validation-summary="ModelOnly"
+                 class="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700"></div>
+
+            <div class="grid gap-5">
+                <div>
+                    <label asp-for="Title" class="mb-2 block text-sm font-semibold text-stone-800"></label>
+                    <input asp-for="Title"
+                           class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+                    <span asp-validation-for="Title" class="mt-2 block text-sm text-rose-600"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Description" class="mb-2 block text-sm font-semibold text-stone-800"></label>
+                    <textarea asp-for="Description"
+                              rows="6"
+                              class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100"></textarea>
+                    <span asp-validation-for="Description" class="mt-2 block text-sm text-rose-600"></span>
+                </div>
+            </div>
+
+            <div id="duplicate-check-panel" class="hidden rounded-[1.5rem] border border-amber-200 bg-amber-50 p-4 sm:p-5">
+    <div class="flex items-start justify-between gap-4">
+        <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-amber-700">Possible existing complaints</p>
+            <h3 class="mt-2 text-base font-bold text-stone-900">We found similar reports that may already describe this issue.</h3>
+            <p class="mt-2 text-sm leading-6 text-stone-700">
+                Review these before submitting. You can still continue if your complaint is different or adds useful new detail.
+            </p>
+        </div>
+        <div id="duplicate-loading" class="hidden text-xs font-medium text-amber-700">
+            Checking…
+        </div>
+    </div>
+
+    <div id="duplicate-results" class="mt-4 space-y-3"></div>
+</div>
+
+            <div class="grid gap-5 md:grid-cols-2">
+                <div>
+                    <label asp-for="CitizenEmail" class="mb-2 block text-sm font-semibold text-stone-800">Citizen Email</label>
+                    <input asp-for="CitizenEmail"
+                           class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+                    <span asp-validation-for="CitizenEmail" class="mt-2 block text-sm text-rose-600"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Address" class="mb-2 block text-sm font-semibold text-stone-800"></label>
+                    <input asp-for="Address"
+                           class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+                    <span asp-validation-for="Address" class="mt-2 block text-sm text-rose-600"></span>
+                </div>
+            </div>
+
+            <div>
+                <div class="mb-2 flex items-center justify-between gap-3">
+                    <label class="block text-sm font-semibold text-stone-800">Pick location on map</label>
+                </div>
+
+                <div class="overflow-hidden rounded-[1.5rem] border border-stone-200">
+                    <div id="complaint-map" class="h-[400px] w-full z-[20]"></div>
+                </div>
+
+                <p class="mt-3 text-sm text-stone-500">
+                    Click on the map to place a marker for the complaint location.
+                </p>
+            </div>
+
+            <input asp-for="Latitude" type="hidden" id="Latitude" />
+            <input asp-for="Longitude" type="hidden" id="Longitude" />
+
+            <div>
+                <label class="mb-2 block text-sm font-semibold text-stone-800">
+                    Images <span class="font-normal text-stone-500">(optional, JPG or PNG, up to 5)</span>
+                </label>
+                <input asp-for="Images"
+                       type="file"
+                       multiple
+                       accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                       class="block w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-stone-700 file:mr-4 file:rounded-full file:border-0 file:bg-brand-600 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-brand-700" />
+                <span asp-validation-for="Images" class="mt-2 block text-sm text-rose-600"></span>
+            </div>
+
+            <input asp-for="RecaptchaToken" type="hidden" id="RecaptchaToken" />
+
+            <div class="flex flex-col gap-3 border-t border-stone-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <p class="text-sm text-stone-500">
+                    By submitting, you confirm the complaint details are accurate to the best of your knowledge.
+                </p>
+
+                <button type="submit"
+                        class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-70"
+                        id="submitComplaintBtn">
+                    <svg id="submitBtnSpinner" class="hidden h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9" class="stroke-white/30" stroke-width="3"></circle>
+                        <path d="M21 12a9 9 0 0 0-9-9" class="stroke-white" stroke-width="3" stroke-linecap="round"></path>
+                    </svg>
+                    <span id="submitBtnText">Submit Complaint</span>
+                </button>
+            </div>
+        </form>
+    </section>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+    <script>
+        const defaultLat = 41.9981;
+        const defaultLng = 21.4254;
+
+        const map = L.map('complaint-map').setView([defaultLat, defaultLng], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        let marker = null;
+
+        const latInput = document.getElementById('Latitude');
+        const lngInput = document.getElementById('Longitude');
+
+        function setMarker(lat, lng) {
+            if (marker) {
+                marker.setLatLng([lat, lng]);
+            } else {
+                marker = L.marker([lat, lng]).addTo(map);
+            }
+
+            latInput.value = lat;
+            lngInput.value = lng;
+        }
+
+        map.on('click', function (e) {
+            setMarker(e.latlng.lat.toFixed(6), e.latlng.lng.toFixed(6));
+        });
+
+        if (latInput.value && lngInput.value) {
+            setMarker(latInput.value, lngInput.value);
+            map.setView([latInput.value, lngInput.value], 15);
+        }
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=@Model.RecaptchaSiteKey"></script>
+
+    <script>
+    // Configure jQuery validation to allow empty file inputs
+    if ($.validator) {
+        $.validator.methods.required = function (value, element) {
+            // Allow empty file inputs (Images field is optional)
+            if (element.type === 'file') {
+                return true;
+            }
+            return $.trim(value).length > 0;
+        };
+    }
+
+    const complaintForm = document.getElementById('complaintForm');
+    const recaptchaTokenInput = document.getElementById('RecaptchaToken');
+    const submitButton = document.getElementById('submitComplaintBtn');
+    const submitBtnText = document.getElementById('submitBtnText');
+    const submitBtnSpinner = document.getElementById('submitBtnSpinner');
+    const submitOverlay = document.getElementById('submitOverlay');
+
+    let submissionLocked = false;
+
+    function showSubmissionState() {
+        complaintForm.setAttribute('aria-busy', 'true');
+        submitOverlay.classList.remove('hidden');
+        submitOverlay.classList.add('flex');
+        submitOverlay.setAttribute('aria-hidden', 'false');
+
+        submitButton.disabled = true;
+        submitBtnText.textContent = 'Submitting...';
+        submitBtnSpinner.classList.remove('hidden');
+    }
+
+    function hideSubmissionState() {
+        complaintForm.setAttribute('aria-busy', 'false');
+        submitOverlay.classList.add('hidden');
+        submitOverlay.classList.remove('flex');
+        submitOverlay.setAttribute('aria-hidden', 'true');
+
+        submitButton.disabled = false;
+        submitBtnText.textContent = 'Submit Complaint';
+        submitBtnSpinner.classList.add('hidden');
+
+        submissionLocked = false;
+    }
+
+    complaintForm.addEventListener('submit', function (e) {
+
+        if (submissionLocked) {
+            e.preventDefault();
+            return;
+        }
+
+        // ASP.NET / jQuery unobtrusive validation
+        if (!$(complaintForm).valid()) {
+            e.preventDefault();
+            return;
+        }
+
+        if (recaptchaTokenInput.value) {
+            submissionLocked = true;
+            showSubmissionState();
+            return;
+        }
+
+        e.preventDefault();
+
+        submissionLocked = true;
+        showSubmissionState();
+
+        grecaptcha.ready(function () {
+            grecaptcha.execute('@Model.RecaptchaSiteKey', { action: 'submit_complaint' })
+                .then(function (token) {
+                    recaptchaTokenInput.value = token;
+                    complaintForm.submit();
+                })
+                .catch(function () {
+                    hideSubmissionState();
+                });
+        });
+    });
+</script>
+
+<script>
+        (() => {
+            const titleInput = document.getElementById('Title');
+            const descriptionInput = document.getElementById('Description');
+            const addressInput = document.getElementById('Address');
+            const latitudeInput = document.getElementById('Latitude');
+            const longitudeInput = document.getElementById('Longitude');
+
+            const panel = document.getElementById('duplicate-check-panel');
+            const results = document.getElementById('duplicate-results');
+            const loading = document.getElementById('duplicate-loading');
+
+const tokenInput = document.querySelector('#complaintForm input[name="__RequestVerificationToken"]');
+
+            if (!titleInput || !descriptionInput || !panel || !results || !tokenInput) {
+                return;
+            }
+
+            let timer = null;
+            let controller = null;
+
+            function getPayload() {
+                return {
+                    title: titleInput.value?.trim() ?? '',
+                    description: descriptionInput.value?.trim() ?? '',
+                    address: addressInput?.value?.trim() ?? '',
+                    latitude: latitudeInput?.value ? parseFloat(latitudeInput.value) : null,
+                    longitude: longitudeInput?.value ? parseFloat(longitudeInput.value) : null
+                };
+            }
+
+            function hasEnoughInput(payload) {
+                const combinedLength = `${payload.title} ${payload.description}`.trim().length;
+                return combinedLength >= 20;
+            }
+
+            function priorityClasses(priority) {
+                switch ((priority || '').toLowerCase()) {
+                    case 'urgent': return 'bg-rose-100 text-rose-700 border-rose-200';
+                    case 'high': return 'bg-amber-100 text-amber-700 border-amber-200';
+                    case 'medium': return 'bg-sky-100 text-sky-700 border-sky-200';
+                    default: return 'bg-stone-100 text-stone-700 border-stone-200';
+                }
+            }
+
+            function renderMatches(matches) {
+                if (!matches || matches.length === 0) {
+                    panel.classList.add('hidden');
+                    results.innerHTML = '';
+                    return;
+                }
+
+                panel.classList.remove('hidden');
+
+                results.innerHTML = matches.map(match => `
+                    <article class="rounded-2xl border border-amber-200 bg-white p-4">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                            <div class="min-w-0">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="text-sm font-semibold text-stone-900">${escapeHtml(match.title)}</h4>
+                                    <span class="inline-flex rounded-full border px-2.5 py-1 text-xs font-semibold ${priorityClasses(match.priority)}">
+                                        ${escapeHtml(match.priority)}
+                                    </span>
+                                </div>
+                                <p class="mt-2 text-xs font-medium uppercase tracking-[0.14em] text-stone-500">
+                                    ${match.similarityPercent}% match · ${escapeHtml(match.matchReason)}
+                                </p>
+                                <p class="mt-2 text-sm text-stone-600">
+                                    ${escapeHtml(match.category)} · ${escapeHtml(match.status)} · ${escapeHtml(match.locationLabel)} · ${escapeHtml(match.createdAt)}
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                `).join('');
+            }
+
+            function escapeHtml(value) {
+                return (value ?? '')
+                    .replaceAll('&', '&amp;')
+                    .replaceAll('<', '&lt;')
+                    .replaceAll('>', '&gt;')
+                    .replaceAll('"', '&quot;')
+                    .replaceAll("'", '&#39;');
+            }
+
+            async function checkDuplicates() {
+                const payload = getPayload();
+
+                if (!hasEnoughInput(payload)) {
+                    panel.classList.add('hidden');
+                    results.innerHTML = '';
+                    return;
+                }
+
+                if (controller) {
+                    controller.abort();
+                }
+
+                controller = new AbortController();
+                loading.classList.remove('hidden');
+
+                try {
+                    const response = await fetch('/Complaints/CheckDuplicates', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'RequestVerificationToken': tokenInput.value
+                        },
+                        body: JSON.stringify(payload),
+                        signal: controller.signal
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Duplicate check failed.');
+                    }
+
+                    const data = await response.json();
+                    renderMatches(data.matches || []);
+                } catch (error) {
+                    if (error.name !== 'AbortError') {
+                        panel.classList.add('hidden');
+                    }
+                } finally {
+                    loading.classList.add('hidden');
+                }
+            }
+
+            function scheduleCheck() {
+                clearTimeout(timer);
+                timer = setTimeout(checkDuplicates, 600);
+            }
+
+            titleInput.addEventListener('input', scheduleCheck);
+            descriptionInput.addEventListener('input', scheduleCheck);
+
+            if (addressInput) addressInput.addEventListener('input', scheduleCheck);
+            if (latitudeInput) latitudeInput.addEventListener('change', scheduleCheck);
+            if (longitudeInput) longitudeInput.addEventListener('change', scheduleCheck);
+        })();
+    </script>
+}

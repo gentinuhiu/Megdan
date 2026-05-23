@@ -1,0 +1,184 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-sm">
+    <div class="grid gap-10 px-6 py-10 sm:px-8 sm:py-12 lg:grid-cols-[1.15fr_0.85fr] lg:px-12 lg:py-16">
+        <div class="flex flex-col justify-center">
+            <div class="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
+                Municipal service portal
+            </div>
+
+            <h1 class="max-w-3xl text-4xl font-black tracking-tight text-stone-900 sm:text-5xl">
+                Report local issues without getting lost in the process.
+            </h1>
+
+            <p class="mt-5 max-w-2xl text-base leading-7 text-stone-600 sm:text-lg">
+                Submit a complaint, attach photos if needed, pinpoint the location on a map, and follow progress through a secure tracking link sent to your email.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a asp-controller="Complaints" asp-action="Create"
+                   class="inline-flex items-center justify-center rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700">
+                    Submit a complaint
+                </a>
+                <a asp-controller="Complaints" asp-action="Track"
+                   class="inline-flex items-center justify-center rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-800 transition hover:border-stone-400 hover:bg-stone-50">
+                    Track existing complaint
+                </a>
+            </div>
+
+            <dl class="mt-10 grid gap-4 sm:grid-cols-3">
+                <div class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4">
+                    <dt class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Access</dt>
+                    <dd class="mt-2 text-sm font-medium text-stone-900">Guest submission with email tracking</dd>
+                </div>
+                <div class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4">
+                    <dt class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Analysis</dt>
+                    <dd class="mt-2 text-sm font-medium text-stone-900">AI-assisted category and priority review</dd>
+                </div>
+                <div class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4">
+                    <dt class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Escalation</dt>
+                    <dd class="mt-2 text-sm font-medium text-stone-900">Urgent issues can be flagged immediately</dd>
+                </div>
+            </dl>
+        </div>
+
+        <aside class="relative">
+            <div class="absolute inset-0 -z-10 rounded-[2rem] bg-stone-100"></div>
+
+            <div class="rounded-[2rem] border border-stone-200 bg-stone-900 p-5 text-stone-50 shadow-sm sm:p-6">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-400">Complaint snapshot</p>
+                        <p class="mt-2 text-lg font-bold">Street lighting outage</p>
+                    </div>
+                    <span class="rounded-full bg-amber-400/20 px-3 py-1 text-xs font-semibold text-amber-300">High</span>
+                </div>
+
+                <div class="space-y-4 py-5">
+                    <div class="rounded-2xl bg-white/5 p-4">
+                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-400">Location</p>
+                        <p class="mt-2 text-sm leading-6 text-stone-200">Boulevard near the pedestrian crossing, with repeated outages after sunset.</p>
+                    </div>
+
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <div class="rounded-2xl bg-white/5 p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-400">Status</p>
+                            <p class="mt-2 text-sm font-medium text-white">In review</p>
+                        </div>
+                        <div class="rounded-2xl bg-white/5 p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-400">Tracking</p>
+                            <p class="mt-2 text-sm font-medium text-white">Private secure link</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-4">
+                    <div class="mb-4 flex items-center justify-between">
+                        <span class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-400">Workflow</span>
+                        <span class="text-xs text-stone-400">3 steps</span>
+                    </div>
+
+                    <ol class="space-y-3 text-sm text-stone-200">
+                        <li class="flex items-start gap-3">
+                            <span class="mt-0.5 h-6 w-6 rounded-full bg-brand-500/30 text-center text-xs font-bold leading-6 text-brand-200">1</span>
+                            <span>Describe the issue and drop a map pin.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-0.5 h-6 w-6 rounded-full bg-brand-500/30 text-center text-xs font-bold leading-6 text-brand-200">2</span>
+                            <span>System checks category, priority, and urgency.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-0.5 h-6 w-6 rounded-full bg-brand-500/30 text-center text-xs font-bold leading-6 text-brand-200">3</span>
+                            <span>You track progress through your email link.</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </aside>
+    </div>
+</section>
+
+<section class="grid gap-6 py-10 lg:grid-cols-[0.95fr_1.05fr] lg:py-14">
+    <div class="rounded-[2rem] border border-stone-200 bg-stone-100 px-6 py-8 sm:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">How it works</p>
+        <h2 class="mt-3 text-2xl font-bold tracking-tight text-stone-900">
+            A straightforward complaint flow built for residents.
+        </h2>
+        <p class="mt-4 max-w-xl text-sm leading-7 text-stone-600 sm:text-base">
+            The process is designed so residents can report issues quickly, while city staff still receive enough detail to categorize, prioritize, and resolve each complaint efficiently.
+        </p>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-3">
+        <article class="rounded-[1.75rem] border border-stone-200 bg-white p-5 shadow-sm">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Step 01</p>
+            <h3 class="mt-3 text-lg font-bold text-stone-900">Submit</h3>
+            <p class="mt-3 text-sm leading-6 text-stone-600">
+                Enter the complaint title, detailed description, contact email, and exact location. Photo upload can remain optional.
+            </p>
+        </article>
+
+        <article class="rounded-[1.75rem] border border-stone-200 bg-white p-5 shadow-sm">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Step 02</p>
+            <h3 class="mt-3 text-lg font-bold text-stone-900">Review</h3>
+            <p class="mt-3 text-sm leading-6 text-stone-600">
+                The system helps classify the issue and supports urgent escalation so administrators can react faster to critical reports.
+            </p>
+        </article>
+
+        <article class="rounded-[1.75rem] border border-stone-200 bg-white p-5 shadow-sm">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Step 03</p>
+            <h3 class="mt-3 text-lg font-bold text-stone-900">Track</h3>
+            <p class="mt-3 text-sm leading-6 text-stone-600">
+                Residents receive a secure tracking link by email and can follow the complaint status without creating an account.
+            </p>
+        </article>
+    </div>
+</section>
+
+<section class="grid gap-6 pb-6 lg:grid-cols-[1.05fr_0.95fr]">
+    <div class="rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">System capabilities</p>
+        <h2 class="mt-3 text-2xl font-bold tracking-tight text-stone-900">Built for public reporting and municipal response.</h2>
+
+        <div class="mt-6 grid gap-4">
+            <div class="rounded-2xl border border-stone-200 bg-stone-50 p-4">
+                <h3 class="text-sm font-semibold text-stone-900">Guest-friendly reporting</h3>
+                <p class="mt-2 text-sm leading-6 text-stone-600">People can report issues without registering, which keeps the submission flow lighter and matches the revised project requirements.</p>
+            </div>
+
+            <div class="rounded-2xl border border-stone-200 bg-stone-50 p-4">
+                <h3 class="text-sm font-semibold text-stone-900">Location-aware complaints</h3>
+                <p class="mt-2 text-sm leading-6 text-stone-600">Complaints can include a dropped map pin so administrators understand where the issue was reported and residents can see that location later when tracking.</p>
+            </div>
+
+            <div class="rounded-2xl border border-stone-200 bg-stone-50 p-4">
+                <h3 class="text-sm font-semibold text-stone-900">Resolution feedback</h3>
+                <p class="mt-2 text-sm leading-6 text-stone-600">Once a complaint is resolved, the platform can collect optional user feedback to help assess service quality.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col justify-between rounded-[2rem] border border-stone-200 bg-brand-600 p-6 text-white shadow-sm sm:p-8">
+        <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-100">Need to report something now?</p>
+            <h2 class="mt-3 text-2xl font-bold tracking-tight">Use the complaint form and send it directly into the review workflow.</h2>
+            <p class="mt-4 text-sm leading-7 text-brand-50/90 sm:text-base">
+                Start with the issue details, add the location, and submit. The system can then assign category and urgency support for the admin team.
+            </p>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a asp-controller="Complaints" asp-action="Create"
+               class="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-800 transition hover:bg-stone-100">
+                Open complaint form
+            </a>
+            <a asp-controller="Complaints" asp-action="Track"
+               class="inline-flex items-center justify-center rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                Open tracking page
+            </a>
+        </div>
+    </div>
+</section>

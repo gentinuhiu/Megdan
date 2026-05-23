@@ -1,0 +1,319 @@
+﻿@{
+    ViewData["Title"] = "Complaint Map";
+}
+
+<section class="flex flex-col-reverse gap-6 lg:grid lg:grid-cols-[0.9fr_1.1fr]">
+    <div class="space-y-6">
+        <div class="rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Geographic overview</p>
+            <h1 class="mt-3 text-3xl font-black tracking-tight text-stone-900 sm:text-4xl">
+                Complaint map
+            </h1>
+            <p class="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
+                Browse submitted complaints by location and review their category, status, and urgency directly from the map.
+            </p>
+
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+                <a asp-controller="Complaints" asp-action="Create"
+                   class="inline-flex items-center justify-center rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700">
+                    Submit complaint
+                </a>
+                <a asp-controller="Complaints" asp-action="Track"
+                   class="inline-flex items-center justify-center rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition hover:border-stone-400 hover:bg-stone-50">
+                    Track complaint
+                </a>
+            </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Legend</p>
+            <h2 class="mt-2 text-xl font-bold tracking-tight text-stone-900">Urgency levels</h2>
+
+            <div class="mt-5 grid gap-3">
+                <div class="flex items-center gap-3 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">
+                    <span class="h-3.5 w-3.5 rounded-full bg-rose-600"></span>
+                    <div>
+                        <p class="text-sm font-semibold text-stone-900">Urgent</p>
+                        <p class="text-xs text-stone-500">Immediate attention required</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">
+                    <span class="h-3.5 w-3.5 rounded-full bg-amber-500"></span>
+                    <div>
+                        <p class="text-sm font-semibold text-stone-900">High</p>
+                        <p class="text-xs text-stone-500">High-priority issue</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">
+                    <span class="h-3.5 w-3.5 rounded-full bg-brand-600"></span>
+                    <div>
+                        <p class="text-sm font-semibold text-stone-900">Medium</p>
+                        <p class="text-xs text-stone-500">Standard review priority</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">
+                    <span class="h-3.5 w-3.5 rounded-full bg-emerald-600"></span>
+                    <div>
+                        <p class="text-sm font-semibold text-stone-900">Low</p>
+                        <p class="text-xs text-stone-500">Lower urgency complaint</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-stone-200 bg-stone-900 p-6 text-stone-50 shadow-sm sm:p-8">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-stone-400">Use note</p>
+            <h2 class="mt-2 text-xl font-bold tracking-tight text-white">What you can do here</h2>
+            <p class="mt-4 text-sm leading-7 text-stone-300">
+                Open any pin to see the complaint title, category, status, urgency, and address. This view works well as a public overview and can also be reused for admins with filters later.
+            </p>
+        </div>
+    </div>
+
+    <section class="rounded-[2rem] border border-stone-200 bg-white p-3 shadow-sm sm:p-4">
+        <div class="overflow-hidden rounded-[1.5rem] border border-stone-200">
+            <div class="flex items-center justify-between border-b border-stone-200 bg-stone-50 px-4 py-3">
+                <div>
+                    <p class="text-sm font-semibold text-stone-900">Live complaint markers</p>
+                    <p class="text-xs text-stone-500">Centered on Skopje by default</p>
+                </div>
+                <span class="rounded-full bg-stone-200 px-3 py-1 text-xs font-semibold text-stone-700">
+                    Map view
+                </span>
+            </div>
+
+            <div id="all-complaints-map"
+                 class="h-[420px] w-full sm:h-[520px] lg:h-[700px]"
+                 role="region"
+                 aria-label="Map showing submitted complaints by urgency">
+            </div>
+        </div>
+    </section>
+</section>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+    <style>
+        .leaflet-popup-content-wrapper {
+            border-radius: 18px;
+            box-shadow: 0 12px 32px rgba(28, 25, 23, 0.14);
+        }
+
+        .leaflet-popup-content {
+            margin: 14px 16px;
+            min-width: 220px;
+        }
+
+        .complaint-marker {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            border-radius: 9999px;
+            border: 3px solid white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        .complaint-marker::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 10px;
+            height: 10px;
+            background: inherit;
+            transform: translateX(-50%) rotate(45deg);
+            border-bottom-right-radius: 2px;
+            margin-top: -3px;
+        }
+
+        .marker-urgent { background-color: #e11d48; }
+        .marker-high { background-color: #f59e0b; }
+        .marker-medium { background-color: #01696f; }
+        .marker-low { background-color: #059669; }
+        .marker-default { background-color: #78716c; }
+
+        .map-popup-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1c1917;
+            margin-bottom: 0.5rem;
+        }
+
+        .map-popup-grid {
+            display: grid;
+            gap: 0.35rem;
+            font-size: 0.82rem;
+            color: #44403c;
+        }
+
+        .map-popup-label {
+            font-weight: 600;
+            color: #292524;
+        }
+
+        .map-popup-badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 9999px;
+            padding: 0.15rem 0.55rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            margin-top: 0.6rem;
+        }
+
+        .badge-urgent { background: #ffe4e6; color: #be123c; }
+        .badge-high { background: #fef3c7; color: #b45309; }
+        .badge-medium { background: #d9ece9; color: #0c4e54; }
+        .badge-low { background: #d1fae5; color: #065f46; }
+        .badge-default { background: #e7e5e4; color: #57534e; }
+    </style>
+
+    <script>
+        const map = L.map('all-complaints-map').setView([41.9981, 21.4254], 12);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        function normalizePriority(priority) {
+    if (priority === null || priority === undefined) return 'default';
+
+    const value = priority.toString().trim().toLowerCase();
+
+    if (value === '1' || value === 'low') return 'low';
+    if (value === '2' || value === 'medium') return 'medium';
+    if (value === '3' || value === 'high') return 'high';
+    if (value === '4' || value === 'urgent') return 'urgent';
+
+    return 'default';
+}
+
+        function markerClass(priority) {
+            const normalized = normalizePriority(priority);
+            return `marker-${normalized}`;
+        }
+
+        function badgeClass(priority) {
+            const normalized = normalizePriority(priority);
+            return `badge-${normalized}`;
+        }
+
+        function buildMarker(priority) {
+            return L.divIcon({
+                className: 'custom-leaflet-marker',
+                html: `<span class="complaint-marker ${markerClass(priority)}" aria-hidden="true"></span>`,
+                iconSize: [20, 28],
+                iconAnchor: [10, 24],
+                popupAnchor: [0, -24]
+            });
+        }
+
+        function priorityLabel(priority) {
+    if (priority === null || priority === undefined) return 'Unknown';
+
+    const value = priority.toString().trim().toLowerCase();
+
+    if (value === '1' || value === 'low') return 'Low';
+    if (value === '2' || value === 'medium') return 'Medium';
+    if (value === '3' || value === 'high') return 'High';
+    if (value === '4' || value === 'urgent') return 'Urgent';
+
+    return 'Unknown';
+}
+
+function statusLabel(status) {
+    if (status === null || status === undefined) return 'Unknown';
+
+    const value = status.toString().trim().toLowerCase();
+
+    if (value === '1' || value === 'pending') return 'Pending';
+    if (value === '2' || value === 'inprogress' || value === 'in progress') return 'In Progress';
+    if (value === '3' || value === 'resolved') return 'Resolved';
+
+    return 'Unknown';
+}
+
+        function escapeHtml(value) {
+            if (value === null || value === undefined) return '';
+            return String(value)
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#39;');
+        }
+
+        fetch('/Map/GetComplaintMarkers')
+            .then(response => response.json())
+            .then(data => {
+                const bounds = [];
+
+                data.forEach(item => {
+    if (item.latitude && item.longitude) {
+
+        const latLng = [item.latitude, item.longitude];
+
+        const priority = item.priority ?? 'Unknown';
+
+        const priorityText = priorityLabel(item.priority);
+        const statusText = statusLabel(item.status);
+
+        const popupHtml = `
+            <div>
+                <div class="map-popup-title">
+                    ${escapeHtml(item.title)}
+                </div>
+
+                <div class="map-popup-grid">
+
+                    <div>
+                        <span class="map-popup-label">Category:</span>
+                        ${escapeHtml(item.category ?? 'N/A')}
+                    </div>
+
+                    <div>
+                        <span class="map-popup-label">Status:</span>
+                        ${escapeHtml(statusText)}
+                    </div>
+
+                    <div>
+                        <span class="map-popup-label">Priority:</span>
+                        ${escapeHtml(priorityText)}
+                    </div>
+
+                    <div>
+                        <span class="map-popup-label">Address:</span>
+                        ${escapeHtml(item.address ?? 'N/A')}
+                    </div>
+
+                </div>
+            </div>
+        `;
+
+        const marker = L.marker(latLng, {
+            icon: buildMarker(priority),
+            title: `${item.title} - ${priorityText} priority`,
+            alt: `${item.title} - ${priorityText} priority`
+        })
+        .addTo(map)
+        .bindPopup(popupHtml);
+
+        bounds.push(latLng);
+    }
+});
+            })
+            .catch(() => {
+                console.error('Failed to load complaint markers.');
+            });
+    </script>
+}
